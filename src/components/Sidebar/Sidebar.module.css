@@ -1,0 +1,13 @@
+.sidebar {
+  grid-area: sidebar;
+  background-color: #ED533B;
+}
+
+.listWrapper {
+  margin: 10px 0 0 10px;
+}
+
+.link{
+  text-decoration: none;
+  color: #4E736F;
+}

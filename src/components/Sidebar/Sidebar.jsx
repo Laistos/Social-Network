@@ -1,14 +1,14 @@
-import './Sidebar.css'
+import styles from './Sidebar.module.css'
 
 const Sidebar = () => {
    return (
-      <nav className='app-sidebar'>
-         <div>
-            <div><a href='#'>Profile</a></div>
-            <div><a href='#'>Messages</a></div>
-            <div><a href='#'>Music</a></div>
-            <div><a href='#'>News</a></div>
-            <div><a href='#'>Settings</a></div>
+      <nav className={styles.sidebar}>
+         <div className={styles.listWrapper}>
+            <div><a className={styles.link} href='#'>Profile</a></div>
+            <div><a className={styles.link} href='#'>Messages</a></div>
+            <div><a className={styles.link} href='#'>Music</a></div>
+            <div><a className={styles.link} href='#'>News</a></div>
+            <div><a className={styles.link} href='#'>Settings</a></div>
          </div>
       </nav>
    )
