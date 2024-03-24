@@ -1,9 +1,4 @@
-.wrapper {
-   grid-area: content;
-   background-color: #C1A0A1;
-}
-
-.image img{
+.image img {
    width: 600px;
    height: 300px;
 }
@@ -16,7 +11,7 @@
    margin-right: 50px;
 }
 
-.avatar img{
-   width:200px;
+.avatar img {
+   width: 200px;
    height: 200px;
 }

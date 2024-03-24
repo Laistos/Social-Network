@@ -1,0 +1,26 @@
+.wrapper{
+   display: flex;
+   align-items: center;
+   text-align: center;
+   margin: 15px 0 0 15px;
+}
+
+.friend_info{
+   align-items: center;
+   
+}
+
+.username{
+   font-size: 15px;
+}
+
+.friend_info img{
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+}
+
+.message{
+   font-size: 15px;
+   margin-left: 30px;
+}
