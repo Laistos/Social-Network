@@ -1,6 +1,6 @@
 import styles from './Sidebar.module.css'
 
-const Sidebar = () => {
+function Sidebar() {
    return (
       <nav className={styles.sidebar}>
          <div className={styles.listWrapper}>

@@ -1,7 +1,7 @@
 import styles from './MyPosts.module.css'
 import Post from './Post/Post'
 
-const MyPosts = () => {
+function MyPosts() {
    return (
       <div className={styles.wrapper}>
          MyPosts
@@ -9,9 +9,8 @@ const MyPosts = () => {
             <textarea className={styles.textarea}>New Post</textarea>
             <button className={styles.button}>Add Post</button>
          </div>
-         <Post />
-         <Post />
-         <Post />
+         <Post message={'Hey! Sup guys!'} like={15} />
+         <Post message={'you want to play lets play! OMG Im in love with this chamber voiceline'} like={50} />
       </div>
    )
 }

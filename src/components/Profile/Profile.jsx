@@ -1,7 +1,7 @@
 import MyPosts from './MyPosts/MyPosts'
 import styles from './Profile.module.css'
 
-const Profile = () => {
+function Profile() {
    return (
       <div className={styles.wrapper}>
          <div className={styles.image}>

@@ -1,6 +1,6 @@
 import styles from './Post.module.css'
 
-const Post = () => {
+function Post(props) {
    return (
       <div className={styles.wrapper}>
          <div className={styles.post}>
@@ -8,9 +8,9 @@ const Post = () => {
                <div className={styles.avatar}>
                   <img src='https://i.pinimg.com/564x/0b/43/6f/0b436f89570588b544edd671511c3b55.jpg' alt='#' />
                </div>
-               <div className={styles.text}>post 1</div>
+               <div className={styles.text}>{props.message}</div>
             </div>
-            <div className={styles.like}>likes 15</div>
+            <div className={styles.like}>likes: {props.like}</div>
          </div>
       </div>
    )
