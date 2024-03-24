@@ -1,3 +1,4 @@
+import MyPosts from './MyPosts/MyPosts'
 import styles from './Profile.module.css'
 
 const Profile = () => {
@@ -17,15 +18,7 @@ const Profile = () => {
                <div className={styles.info}>IITU</div>
             </div>
          </div>
-         <div>
-            MyPosts
-            <div>New post</div>
-            <div>
-               Posts
-               <div>post1</div>
-               <div>post2</div>
-            </div>
-         </div>
+         <MyPosts />
       </div>
    )
 }

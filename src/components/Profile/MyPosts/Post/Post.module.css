@@ -1,0 +1,22 @@
+.wrapper{
+   margin-top: 10px;
+}
+
+.post{
+   margin-top: 15px;
+}
+
+.avaText{
+   display: flex;
+}
+
+.avatar img{
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+}
+
+.text{
+   font-size: 18px;
+   margin-left: 10px;
+}
