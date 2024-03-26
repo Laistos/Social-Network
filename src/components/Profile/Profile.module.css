@@ -1,17 +1,1 @@
-.image img {
-   width: 600px;
-   height: 300px;
-}
-
-.user {
-   display: flex;
-}
-
-.avatar {
-   margin-right: 50px;
-}
-
-.avatar img {
-   width: 200px;
-   height: 200px;
-}
+.wrapper{}

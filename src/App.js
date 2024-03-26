@@ -17,7 +17,7 @@ function App() {
         <div className={styles.component_wrapper}>
           <Routes className={styles.component_wrapper}>
             <Route path='/profile' element={<Profile />} />
-            <Route path='/messages' element={<Dialogs message={'Hey!'} />} />
+            <Route path='/messages/*' element={<Dialogs message={'Hey!'} />} />
             <Route path='/music' element={<Music music={'Hey Jude!'} />} />
             <Route path='/news' element={<News text={'NEWS!'} />} />
             <Route path='/settings' element={<Settings setting={'volume = 80'} />} />

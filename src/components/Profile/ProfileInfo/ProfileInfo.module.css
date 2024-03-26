@@ -1,0 +1,19 @@
+.image img {
+   width: 1000px;
+   height: 500px;
+}
+
+.user {
+   margin-top: 15px;
+   padding-left: 10px;
+   display: flex;
+}
+
+.avatar {
+   margin-right: 50px;
+}
+
+.avatar img {
+   width: 200px;
+   height: 200px;
+}

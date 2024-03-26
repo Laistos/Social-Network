@@ -4,7 +4,6 @@
 
 .items{
    align-items: center;
-   
 }
 
 .items img{
@@ -14,6 +13,7 @@
 }
 
 .username{
+   margin-left: 10px;
    font-size: 15px;
 }
 
@@ -25,4 +25,16 @@
    border: 1px solid #000 ;
    width: 800px;
    padding: 5px;
+}
+
+.message{
+   padding-left: 60px;
+   width: 500px;
+}
+.item{
+   width: 200px;
+   display: grid;
+   grid-template-columns: 2fr 2fr;
+   align-items: center;
+   justify-content: center;
 }
