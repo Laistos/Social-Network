@@ -1,26 +1,28 @@
 .wrapper{
-   display: flex;
-   align-items: center;
-   text-align: center;
    margin: 15px 0 0 15px;
 }
 
-.friend_info{
+.items{
    align-items: center;
    
+}
+
+.items img{
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
 }
 
 .username{
    font-size: 15px;
 }
 
-.friend_info img{
-   width: 70px;
-   height: 70px;
-   border-radius: 50%;
-}
-
-.message{
-   font-size: 15px;
-   margin-left: 30px;
+.item_container{
+   display: grid;
+   grid-template-columns: 2fr 10fr;
+   margin-bottom: 10px;
+   align-items: center;
+   border: 1px solid #000 ;
+   width: 800px;
+   padding: 5px;
 }
