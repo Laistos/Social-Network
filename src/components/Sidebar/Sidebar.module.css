@@ -5,9 +5,19 @@
 
 .listWrapper {
   margin: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-.link{
+.link a{
   text-decoration: none;
-  color: #4E736F;
+  color: #662e1c;
+  transition: color 0.2s linear;
+}
+.link a:hover{
+  color: #fff;
+}
+
+.link .active{
+  color: #fff;
 }
