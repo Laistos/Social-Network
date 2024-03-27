@@ -10,7 +10,7 @@ function Post(props) {
                </div>
                <div className={styles.text}>{props.message}</div>
             </div>
-            <div className={styles.like}>likes: {props.like}</div>
+            <div className={styles.like}>likes: {props.likes}</div>
          </div>
       </div>
    )
