@@ -8,6 +8,8 @@ function MyPosts() {
       { message: 'you want to play lets play! OMG Im in love with this chamber voiceline', likes: 50 },
    ]
 
+   let posts = postInfo.map((post) => { return <Post message={post.message} likes={post.likes} /> })
+
 
    return (
       <div className={styles.wrapper}>
@@ -16,8 +18,7 @@ function MyPosts() {
             <textarea className={styles.textarea}>New Post</textarea>
             <button className={styles.button}>Add Post</button>
          </div>
-         <Post message={postInfo[0].message} likes={postInfo[0].likes} />
-         <Post message={postInfo[1].message} likes={postInfo[1].likes} />
+         {posts}
       </div>
    )
 }

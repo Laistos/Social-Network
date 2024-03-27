@@ -3,13 +3,22 @@
 }
 
 .items{
+   display: grid;
+   grid-template-columns: 1fr 10fr;
+}
+
+.dialog_container{
    align-items: center;
 }
 
-.items img{
+.dialog_container img{
    width: 70px;
    height: 70px;
    border-radius: 50%;
+   margin-bottom: 10px; 
+}
+
+.message_container{
 }
 
 .username{
@@ -17,20 +26,15 @@
    font-size: 15px;
 }
 
-.item_container{
-   display: grid;
-   grid-template-columns: 2fr 10fr;
-   margin-bottom: 10px;
-   align-items: center;
-   border: 1px solid #000 ;
-   width: 800px;
-   padding: 5px;
-}
-
 .message{
    padding-left: 60px;
    width: 500px;
 }
+
+.message:not(:last-child){
+   margin: 24px 0 60px 0;
+}
+
 .item{
    width: 200px;
    display: grid;
