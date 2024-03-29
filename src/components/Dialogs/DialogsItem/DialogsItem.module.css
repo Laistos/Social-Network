@@ -1,0 +1,11 @@
+.username{
+   margin-left: 10px;
+   font-size: 15px;
+}
+.item{
+   width: 200px;
+   display: grid;
+   grid-template-columns: 2fr 2fr;
+   align-items: center;
+   justify-content: center;
+}

@@ -18,27 +18,5 @@
    margin-bottom: 10px; 
 }
 
-.message_container{
-}
 
-.username{
-   margin-left: 10px;
-   font-size: 15px;
-}
 
-.message{
-   padding-left: 60px;
-   width: 500px;
-}
-
-.message:not(:last-child){
-   margin: 24px 0 60px 0;
-}
-
-.item{
-   width: 200px;
-   display: grid;
-   grid-template-columns: 2fr 2fr;
-   align-items: center;
-   justify-content: center;
-}
