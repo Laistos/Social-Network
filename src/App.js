@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import { Friends } from './components/Friends/Friends';
 
 const App = (props) => {
   return (
@@ -16,11 +17,12 @@ const App = (props) => {
         <Sidebar />
         <div className={styles.component_wrapper}>
           <Routes className={styles.component_wrapper}>
-            <Route path='/profile' element={<Profile postInfo={props.postInfo} />} />
-            <Route path='/messages/*' element={<Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData} />} />
+            <Route path='/profile' element={<Profile profile={props.state.profilePage} />} />
+            <Route path='/messages/*' element={<Dialogs dialogs={props.state.messagesPage} />} />
             <Route path='/music' element={<Music music={'Hey Jude!'} />} />
             <Route path='/news' element={<News text={'NEWS!'} />} />
             <Route path='/settings' element={<Settings setting={'volume = 80'} />} />
+            <Route path='/friends' element={<Friends friends={props.state.friendsPage} />} />
           </Routes>
         </div>
       </div>
