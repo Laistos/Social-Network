@@ -1,5 +1,5 @@
 .username{
-   margin-left: 10px;
+   margin: 0 0 0 10px;
    font-size: 15px;
 }
 .item{
@@ -8,4 +8,6 @@
    grid-template-columns: 2fr 2fr;
    align-items: center;
    justify-content: center;
+   margin-bottom: 20px;
+   margin-top: 32px;
 }

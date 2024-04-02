@@ -1,12 +1,42 @@
-.message_container{
-}
+.message_container {}
 
 
-.message{
+.message {
    padding-left: 60px;
    width: 500px;
 }
 
-.message:not(:last-child){
-   margin: 24px 0 60px 0;
+.message:not(:last-child) {
+   margin: 24px 0 20px 0;
+}
+
+.message_text{
+   margin-bottom: 10px;
+}
+
+.add_message {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
+}
+
+
+.textarea {
+   width: 200px;
+   height: 50px;
+   border-radius: 10px;
+
+}
+
+.send_message {
+   width: 100px;
+   height: 30px;
+   border-radius: 10px;
+   color: white;
+   transition: .2s linear;
+   background: #0B63F6;
+}
+
+.send_message:hover {
+   box-shadow: 0 0 0 2px white, 0 0 0 4px #3C82F8;
 }
