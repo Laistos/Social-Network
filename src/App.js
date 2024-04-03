@@ -17,7 +17,7 @@ const App = (props) => {
             <div className={styles.component_wrapper}>
                 <Routes className={styles.component_wrapper}>
                     <Route path='/profile' element={<Profile profile={props.state.profilePage} addNewPost={props.addNewPost}/>}/>
-                    <Route path='/messages/*' element={<Dialogs dialogs={props.state.messagesPage}/>}/>
+                    <Route path='/messages/*' element={<Dialogs dialogs={props.state.messagesPage} addMessage={props.addMessage}/>}/>
                     <Route path='/music' element={<Music music={'Hey Jude!'}/>}/>
                     <Route path='/news' element={<News text={'NEWS!'}/>}/>
                     <Route path='/settings' element={<Settings setting={'volume = 80'}/>}/>
