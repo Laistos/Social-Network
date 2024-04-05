@@ -9,16 +9,20 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef()
     let addPost = () => {
+        props.addNewPost()
+    }
+
+    let onPostChange = () => {
         let text = newPostElement.current.value
-        props.addNewPost(text)
+        props.updatePostText(text)
     }
 
     return (
         <div className={styles.wrapper}>
             MyPosts
             <div className={styles.addPost}>
-                <textarea className={styles.textarea}
-                          ref={newPostElement}>New Post</textarea> {/*newPostElement это ссылка на textarea*/}
+                <textarea onChange={onPostChange} className={styles.textarea}
+                          ref={newPostElement} value={props.newPostText} />
                 <button className={styles.button} onClick={addPost}>Add Post</button>
             </div>
             {posts}

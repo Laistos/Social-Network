@@ -7,6 +7,7 @@ export let state = {
             {id: 1, message: 'Hey! Sup guys!', likes: 15},
             {id: 2, message: 'you want to play lets play! OMG Im in love with this chamber voiceline', likes: 50},
         ],
+        newPostText: '',
     },
     messagesPage: {
         dialogs: [
@@ -33,13 +34,16 @@ export let state = {
     }
 }
 
-export let addNewPost = (postMessage) => {
+window.state = state
+
+export let addNewPost = () => {
     let newPost = {
         id: 3,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likes: 20
     };
     state.profilePage.post.push(newPost)
+    updatePostText('')
     rerenderEntireTree(state)
 }
 
@@ -49,4 +53,13 @@ export let addMessage = (message) => {
     }
     state.messagesPage.messages.push(newMessage)
     rerenderEntireTree(state)
+}
+
+export let updatePostText = (newText) => {
+    state.profilePage.newPostText = newText
+    rerenderEntireTree(state)
+}
+
+export let onTextareaChange = () => {
+
 }
