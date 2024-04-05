@@ -24,6 +24,7 @@ export let state = {
             {message: 'Между небом и землей лишь я один достойный'},
             {message: 'Между небом и землей лишь я одна достойна'},
         ],
+        newMessageText: '',
     },
     friendsPage: {
         friends: [
@@ -47,19 +48,21 @@ export let addNewPost = () => {
     rerenderEntireTree(state)
 }
 
-export let addMessage = (message) => {
-    let newMessage ={
-        message: message
-    }
-    state.messagesPage.messages.push(newMessage)
-    rerenderEntireTree(state)
-}
-
 export let updatePostText = (newText) => {
     state.profilePage.newPostText = newText
     rerenderEntireTree(state)
 }
 
-export let onTextareaChange = () => {
+export let addMessage = () => {
+    let newMessage ={
+        message: state.messagesPage.newMessageText
+    }
+    state.messagesPage.messages.push(newMessage)
+    updateMessageText('')
+    rerenderEntireTree(state)
+}
 
+export let updateMessageText = (newText) => {
+    state.messagesPage.newMessageText = newText
+    rerenderEntireTree(state)
 }
