@@ -3,11 +3,11 @@ import { DialogsItem } from './DialogsItem/DialogsItem'
 import { MessagesItem } from './MessagesItem/MessagesItem'
 
 const Dialogs = (props) => {
-   let dialogsElements = props.dialogs.dialogs.map((dialog) => { return <DialogsItem name={dialog.name} id={dialog.id} /> })
-   let messagesElement = props.dialogs.messages.map((message) => { return <MessagesItem addMessage={props.addMessage}
-                                                                                        message={message.message}
-                                                                                        newMessageText={props.dialogs.newMessageText}
-                                                                                        updateMessageText={props.updateMessageText}/> })
+
+   let dialogs = props.store.getState().messagesPage
+
+   let dialogsElements = dialogs.dialogs.map((dialog) => { return <DialogsItem name={dialog.name} id={dialog.id} /> })
+   let messagesElement = dialogs.messages.map((message) => { return <MessagesItem message={message.message} store={props.store}/> })
    return (
       <div className={styles.wrapper}>
          <div className={styles.items}>

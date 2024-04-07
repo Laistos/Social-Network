@@ -16,16 +16,12 @@ const App = (props) => {
             <Sidebar/>
             <div className={styles.component_wrapper}>
                 <Routes className={styles.component_wrapper}>
-                    <Route path='/profile' element={<Profile profile={props.state.profilePage}
-                                                             addNewPost={props.addNewPost}
-                                                             updatePostText={props.updatePostText} />}/>
-                    <Route path='/messages/*' element={<Dialogs dialogs={props.state.messagesPage}
-                                                                addMessage={props.addMessage}
-                                                                updateMessageText={props.updateMessageText}/>}/>
+                    <Route path='/profile' element={<Profile store={props.store} />}/>
+                    <Route path='/messages/*' element={<Dialogs store={props.store}/>}/>
                     <Route path='/music' element={<Music music={'Hey Jude!'}/>}/>
                     <Route path='/news' element={<News text={'NEWS!'}/>}/>
                     <Route path='/settings' element={<Settings setting={'volume = 80'}/>}/>
-                    <Route path='/friends' element={<Friends friends={props.state.friendsPage}/>}/>
+                    <Route path='/friends' element={<Friends />}/>
                 </Routes>
             </div>
         </div>
