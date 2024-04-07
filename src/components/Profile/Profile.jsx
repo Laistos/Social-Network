@@ -8,7 +8,10 @@ const Profile = (props) => {
    return (
       <div className={styles.wrapper}>
          <ProfileInfo avatar={'https://i.pinimg.com/564x/0b/43/6f/0b436f89570588b544edd671511c3b55.jpg'} />
-         <MyPosts store={props.store}/>
+         <MyPosts post={props.profile.post}
+                  addNewPost={props.addNewPost}
+                  newPostText={props.profile.newPostText}
+                  updatePostText={props.updatePostText}/>
       </div>
    )
 }

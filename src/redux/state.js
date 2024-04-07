@@ -43,7 +43,7 @@ export let store = {
         };
         this._state.profilePage.post.push(newPost)
         this.updatePostText('')
-        this.subscribe()
+        this.notify()
     },
     addMessage(){
         let newMessage = {
@@ -51,20 +51,25 @@ export let store = {
         }
         this._state.messagesPage.messages.push(newMessage)
         this.updateMessageText('')
-        this.subscribe()
+        this.notify()
     },
     updatePostText(newText){
         this._state.profilePage.newPostText = newText
-        this.subscribe()
+        this.notify()
     },
     updateMessageText(newText){
         this._state.messagesPage.newMessageText = newText
-        this.subscribe()
+        this.notify()
     },
     subscribe(observer) {
-        this.subscribe = observer
+        this._observer = observer
+    },
+    notify(){
+        if(this._observer){
+            this._observer(this._state)
+        }
     }
 }
 
-window.state = store.getState()
+window.store = store.getState()
 
