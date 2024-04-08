@@ -1,3 +1,9 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
+
+
 export let store = {
     _state: {
         profilePage: {
@@ -56,17 +62,43 @@ export let store = {
         } else if (action.type === 'UPDATE-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText
             this.notify()
-        } else if (action.type === 'ADD-MESSAGE'){
+        } else if (action.type === 'ADD-MESSAGE') {
             let newMessage = {
                 message: this._state.messagesPage.newMessageText
             }
             this._state.messagesPage.messages.push(newMessage)
             this._state.messagesPage.newMessageText = ''
             this.notify()
-        } else if (action.type === 'UPDATE-MESSAGE-TEXT'){
+        } else if (action.type === 'UPDATE-MESSAGE-TEXT') {
             this._state.messagesPage.newMessageText = action.newText
             this.notify()
         }
+    }
+}
+
+export const addPostActionCreator = () => {
+    return {
+        type: ADD_POST
+    }
+}
+
+export const updatePostActionCreator = (text) => {
+    return{
+        type: UPDATE_POST_TEXT,
+        newText: text
+    }
+}
+
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE
+    }
+}
+
+export const updateMessageActionCreator = (text) => {
+    return {
+        type: UPDATE_MESSAGE_TEXT,
+        newText: text
     }
 }
 
