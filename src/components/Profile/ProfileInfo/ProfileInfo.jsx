@@ -1,10 +1,11 @@
 import styles from './ProfileInfo.module.css'
+import image from '../../../images/background.jpeg'
 
 const ProfileInfo = (props) => {
    return (
       <div className={styles.wrapper}>
          <div className={styles.image}>
-            <img src='https://w.wallha.com/ws/14/oOKSTL6W.jpg' alt='#' />
+            <img src={image} alt='#' />
          </div>
          <div className={styles.user}>
             <div className={styles.avatar}>

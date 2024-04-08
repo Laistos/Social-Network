@@ -1,6 +1,6 @@
 .sidebar {
   grid-area: sidebar;
-  background-color: #ED533B;
+  background-color: #01839d;
 }
 
 .listWrapper {
@@ -11,7 +11,7 @@
 
 .link a{
   text-decoration: none;
-  color: #662e1c;
+  color: #012d4a;
   transition: color 0.2s linear;
 }
 .link a:hover{
