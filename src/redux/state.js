@@ -32,41 +32,40 @@ export let store = {
             ],
         }
     },
-    getState(){
+    getState() {
         return this._state
-    },
-    addNewPost() {
-        let newPost = {
-            id: 3,
-            message: this._state.profilePage.newPostText,
-            likes: 20
-        };
-        this._state.profilePage.post.push(newPost)
-        this.updatePostText('')
-        this.notify()
-    },
-    addMessage(){
-        let newMessage = {
-            message: this._state.messagesPage.newMessageText
-        }
-        this._state.messagesPage.messages.push(newMessage)
-        this.updateMessageText('')
-        this.notify()
-    },
-    updatePostText(newText){
-        this._state.profilePage.newPostText = newText
-        this.notify()
-    },
-    updateMessageText(newText){
-        this._state.messagesPage.newMessageText = newText
-        this.notify()
     },
     subscribe(observer) {
         this._observer = observer
     },
-    notify(){
-        if(this._observer){
+    notify() {
+        if (this._observer) {
             this._observer(this._state)
+        }
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 3,
+                message: this._state.profilePage.newPostText,
+                likes: 20
+            };
+            this._state.profilePage.post.push(newPost)
+            this._state.profilePage.newPostText = ''
+            this.notify()
+        } else if (action.type === 'UPDATE-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText
+            this.notify()
+        } else if (action.type === 'ADD-MESSAGE'){
+            let newMessage = {
+                message: this._state.messagesPage.newMessageText
+            }
+            this._state.messagesPage.messages.push(newMessage)
+            this._state.messagesPage.newMessageText = ''
+            this.notify()
+        } else if (action.type === 'UPDATE-MESSAGE-TEXT'){
+            this._state.messagesPage.newMessageText = action.newText
+            this.notify()
         }
     }
 }

@@ -18,11 +18,10 @@ const App = (props) => {
                 <Routes className={styles.component_wrapper}>
                     <Route path='/profile'
                            element={<Profile profile={props.state.profilePage}
-                                             addNewPost={props.addNewPost}
-                                             updatePostText={props.updatePostText}/>}/>
+                                             dispatch={props.dispatch}/>}/>
                     <Route path='/messages/*'
-                           element={<Dialogs dialogs={props.state.messagesPage} addMessage={props.addMessage}
-                                             updateMessageText={props.updateMessageText}/>}/>
+                           element={<Dialogs dialogs={props.state.messagesPage}
+                                             dispatch={props.dispatch}/>}/>
                     <Route path='/music' element={<Music music={'Hey Jude!'}/>}/>
                     <Route path='/news' element={<News text={'NEWS!'}/>}/>
                     <Route path='/settings' element={<Settings setting={'volume = 80'}/>}/>

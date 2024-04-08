@@ -7,7 +7,7 @@ const Dialogs = (props) => {
    let messagesElement = props.dialogs.messages.map((message) => { return <MessagesItem addMessage={props.addMessage}
                                                                                         message={message.message}
                                                                                         newMessageText={props.dialogs.newMessageText}
-                                                                                        updateMessageText={props.updateMessageText}/> })
+                                                                                        dispatch={props.dispatch}/> })
    return (
       <div className={styles.wrapper}>
          <div className={styles.items}>
