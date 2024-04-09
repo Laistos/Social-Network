@@ -17,10 +17,10 @@ const App = (props) => {
             <div className={styles.component_wrapper}>
                 <Routes className={styles.component_wrapper}>
                     <Route path='/profile'
-                           element={<Profile profile={props.state.profilePage}
+                           element={<Profile profile={props.state.profileReducer}
                                              dispatch={props.dispatch}/>}/>
                     <Route path='/messages/*'
-                           element={<Dialogs dialogs={props.state.messagesPage}
+                           element={<Dialogs dialogs={props.state.dialogsReducer}
                                              dispatch={props.dispatch}/>}/>
                     <Route path='/music' element={<Music music={'Hey Jude!'}/>}/>
                     <Route path='/news' element={<News text={'NEWS!'}/>}/>
