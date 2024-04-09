@@ -1,8 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
-
+import profileReducer from "./reducer/profileReducer";
+import dialogsReducer from "./reducer/dialogsReducer";
 
 export let store = {
     _state: {
@@ -50,57 +47,13 @@ export let store = {
         }
     },
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 3,
-                message: this._state.profilePage.newPostText,
-                likes: 20
-            };
-            this._state.profilePage.post.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this.notify()
-        } else if (action.type === 'UPDATE-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText
-            this.notify()
-        } else if (action.type === 'ADD-MESSAGE') {
-            let newMessage = {
-                message: this._state.messagesPage.newMessageText
-            }
-            this._state.messagesPage.messages.push(newMessage)
-            this._state.messagesPage.newMessageText = ''
-            this.notify()
-        } else if (action.type === 'UPDATE-MESSAGE-TEXT') {
-            this._state.messagesPage.newMessageText = action.newText
-            this.notify()
-        }
+        profileReducer(this._state.profilePage, action)
+        dialogsReducer(this._state.messagesPage, action)
+        this.notify()
     }
 }
 
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    }
-}
 
-export const updatePostActionCreator = (text) => {
-    return{
-        type: UPDATE_POST_TEXT,
-        newText: text
-    }
-}
-
-export const addMessageActionCreator = () => {
-    return {
-        type: ADD_MESSAGE
-    }
-}
-
-export const updateMessageActionCreator = (text) => {
-    return {
-        type: UPDATE_MESSAGE_TEXT,
-        newText: text
-    }
-}
 
 window.store = store.getState()
 

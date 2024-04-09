@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './MessagesItem.module.css'
-import {addMessageActionCreator, updateMessageActionCreator} from "../../../redux/state";
+import {addMessageActionCreator, updateMessageActionCreator} from "../../../redux/reducer/dialogsReducer";
 
 export const MessagesItem = (props) => {
     let newMessageElement = React.createRef()
