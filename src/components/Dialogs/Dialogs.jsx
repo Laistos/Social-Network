@@ -1,13 +1,13 @@
 import styles from './Dialogs.module.css'
 import { DialogsItem } from './DialogsItem/DialogsItem'
-import { MessagesItem } from './MessagesItem/MessagesItem'
+import {MessagesItemContainer} from "./MessagesItem/MessagesItemContainer";
 
 const Dialogs = (props) => {
-   let dialogsElements = props.dialogs.dialogs.map((dialog) => { return <DialogsItem name={dialog.name} id={dialog.id} /> })
-   let messagesElement = props.dialogs.messages.map((message) => { return <MessagesItem addMessage={props.addMessage}
-                                                                                        message={message.message}
-                                                                                        newMessageText={props.dialogs.newMessageText}
-                                                                                        dispatch={props.dispatch}/> })
+   let state = props.store.getState()
+
+   let dialogsElements = state.dialogsReducer.dialogs.map((dialog) => { return <DialogsItem name={dialog.name} id={dialog.id} /> })
+   let messagesElement = state.dialogsReducer.messages.map((message) => { return <MessagesItemContainer store={props.store}
+                                                                                                        message={message.message}/> })
    return (
       <div className={styles.wrapper}>
          <div className={styles.items}>
