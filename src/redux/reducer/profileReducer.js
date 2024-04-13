@@ -8,13 +8,14 @@ let initialState = {
     ],
     newPostText: '',
 }
+let nextId = 3;
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case  ADD_POST:
             let newState = structuredClone(state)
             let newPost = {
-                id: 3,
+                id: nextId++,
                 message: newState.newPostText,
                 likes: 20
             };
