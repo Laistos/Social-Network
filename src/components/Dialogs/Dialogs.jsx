@@ -4,11 +4,11 @@ import {MessagesItem} from "./MessagesItem/MessagesItem";
 import React from "react";
 
 const Dialogs = (props) => {
-   let dialogsElements = props.state.dialogs.map((dialog) => { return <DialogsItem name={dialog.name} id={dialog.id} /> })
-   let messagesElement = props.state.messages.map((messages) => { return <MessagesItem addMessage={props.addMessage}
+   let dialogsElements = props.messagesPage.dialogs.map((dialog) => { return <DialogsItem name={dialog.name} id={dialog.id} /> })
+   let messagesElement = props.messagesPage.messages.map((messages) => { return <MessagesItem addMessage={props.addMessage}
                                                                                       onMessageChange={props.onMessageChange}
                                                                                       message={messages.message}
-                                                                                      newMessageText={props.state.newMessageText}/> })
+                                                                                      newMessageText={props.messagesPage.newMessageText}/> })
 
 
    return (
