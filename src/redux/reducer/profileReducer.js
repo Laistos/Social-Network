@@ -12,23 +12,17 @@ let nextId = 3;
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case  ADD_POST:
-            let newState = structuredClone(state)
-            let newPost = {
-                id: nextId++,
-                message: newState.newPostText,
-                likes: 20
-            };
-            newState.post.push(newPost)
-            newState.newPostText = ''
-            return newState
         case UPDATE_POST_TEXT:
-            // state.newPostText = action.newText
-            // return state
             return {
                 ...state,
                 newPostText: action.newText
-            };
+            }
+        case  ADD_POST:
+            return {
+                ...state,
+                post: [...state.post, {id: nextId++, message: state.newPostText, likes: 20}],
+                newPostText: '',
+            }
         default:
             return state
     }

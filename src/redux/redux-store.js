@@ -9,3 +9,5 @@ let reducers = combineReducers({
 export let store = configureStore({
     reducer: reducers
 })
+
+window.store = store
