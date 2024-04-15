@@ -6,24 +6,23 @@ import Sidebar from './components/Sidebar/Sidebar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import Friends from './components/Friends/Friends';
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
-const App = (props) => {
+const App = () => {
     return (
         <div className={styles.wrapper}>
             <Header/>
             <Sidebar/>
             <div className={styles.component_wrapper}>
                 <Routes className={styles.component_wrapper}>
-                    <Route path='/profile'
-                           element={<Profile />}/>
-                    <Route path='/messages/*'
-                           element={<DialogsContainer/>}/>
+                    <Route path='/profile' element={<Profile/>}/>
+                    <Route path='/messages/*' element={<DialogsContainer/>}/>
                     <Route path='/music' element={<Music music={'Hey Jude!'}/>}/>
                     <Route path='/news' element={<News text={'NEWS!'}/>}/>
                     <Route path='/settings' element={<Settings setting={'volume = 80'}/>}/>
                     {/*<Route path='/friends' element={<Friends friends={props.state.friendsPage}/>}/>*/}
+                    <Route path='/users' element={<UsersContainer/>}/>
                 </Routes>
             </div>
         </div>

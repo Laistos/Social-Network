@@ -23,6 +23,9 @@ function Sidebar() {
             <div className={styles.link}>
                <NavLink className={({ isActive }) => isActive ? styles.active : styles.link} to='/friends'>Friends</NavLink>
             </div>
+            <div className={styles.link}>
+               <NavLink className={({isActive}) => isActive ? styles.active : styles.link} to='/users'>Users</NavLink>
+            </div>
          </div>
       </nav >
    )
