@@ -1,16 +1,11 @@
 import styles from './Users.module.css'
 import React from 'react'
-import axios from "axios";
 import avatar from '../../images/user-avatar/avatar.jpg'
+import {getUsers} from "../../DAL/api";
 
 const Users = (props) => {
 
-    if (props.users.length === 0){
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then((response) => {
-            props.setUsers(response.data.items)
-        })
-    }
-
+    getUsers(props.users, props.setUsers)
 
     return (
         <div className={styles.wrapper}>
