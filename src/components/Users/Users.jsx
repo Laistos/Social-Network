@@ -4,12 +4,10 @@ import avatar from "../../images/user-avatar/avatar.jpg";
 import {getUsers} from "../../DAL/api";
 
 class Users extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        getUsers(props.users, props.setUsers)
+    componentDidMount() {
+        getUsers(this.props.users, this.props.setUsers)
     }
+
     render() {
         return (
             <div className={styles.wrapper}>
