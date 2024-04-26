@@ -5,12 +5,33 @@ import {getUsers} from "../../DAL/api";
 
 class Users extends React.Component {
     componentDidMount() {
-        getUsers(this.props.users, this.props.setUsers)
+        if (this.props.users.length === 0) {
+            getUsers(this.props.users, this.props.setUsers, this.props.setUsersTotalCount,this.props.currentPage, this.props.count)
+        }
+    }
+
+    onUsersChange = (page) => {
+        this.props.setPage(page)
+        getUsers(this.props.users, this.props.setUsers, this.props.setUsersTotalCount, page, this.props.count)
     }
 
     render() {
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.count)
+        let pages = []
+        for (let i = 1; i <= pagesCount; i++){
+            pages.push(i)
+        }
+
+        let curP = this.props.currentPage;
+        let curPF = ((curP - 5) < 0) ?  0  : curP - 5 ;
+        let curPL = curP + 5;
+        let slicedPages = pages.slice( curPF, curPL);
+
         return (
             <div className={styles.wrapper}>
+                <div>
+                    {slicedPages.map((page) => <button onClick={() => this.onUsersChange(page)} className={this.props.currentPage === page && styles.selectedPage}>{page}</button>)}
+                </div>
                 {
                     this.props.users.map((u) => <div className={styles.wrapper} key={u.id}>
                             <div className={styles.flex_container}>
