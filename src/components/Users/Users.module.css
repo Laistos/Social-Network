@@ -3,6 +3,16 @@
     height: 200px;
 }
 
-.selectedPage{
-    border-radius: 10px;
+.page{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    transition: .2s linear;
+    background: #0093b7;
+    margin: 15px 0 15px 15px;
+    &:hover{
+        box-shadow: 0 0 0 2px white, 0 0 0 4px #0093b7
+    }
 }
