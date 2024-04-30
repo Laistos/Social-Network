@@ -1,8 +1,9 @@
 import styles from './Users.module.css'
-import avatar from "../../images/user-avatar/avatar.jpg";
-import React from "react";
+import avatar from '../../images/Users/user-avatar/avatar.jpg'
+import React from 'react';
 
 const Users = (props) => {
+
     return (
         <div className={styles.wrapper}>
             <div>
