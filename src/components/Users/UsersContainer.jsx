@@ -1,12 +1,12 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    followAC,
-    setPageAC,
-    setUsersAC,
-    setUsersTotalCountAC,
-    toggleIsFetchingAC,
-    unfollowAC
+    follow,
+    setPage,
+    setUsers,
+    setUsersTotalCount,
+    toggleIsFetching,
+    unfollow
 } from "../../redux/reducer/usersReducer";
 import Users from "./Users";
 import {getUsers} from "../../DAL/api";
@@ -63,29 +63,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (usersID) => {
-            dispatch(followAC(usersID))
-        },
-        unfollow: (usersID) => {
-            dispatch(unfollowAC(usersID))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setUsersTotalCount: (totalCount) => {
-            dispatch(setUsersTotalCountAC(totalCount))
-        },
-        setPage: (page) => {
-            dispatch(setPageAC(page))
-        },
-        toggleIsFetching: (isFetching) => {
-            dispatch(toggleIsFetchingAC(isFetching))
-        }
-    }
-}
-
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersClass)
+const UsersContainer = connect(mapStateToProps,
+    {follow, unfollow, setUsers, setUsersTotalCount, setPage, toggleIsFetching})(UsersClass)
 
 export default UsersContainer
